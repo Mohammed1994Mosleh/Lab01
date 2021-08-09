@@ -37,13 +37,7 @@ class HornedBeasts extends React.Component {
             </Card.Body>
           </Card>
 
-            // <div>
-            //     <h2>{this.props.name}</h2>
-            //     <img src={this.props.imageUrl} onClick={this.incrNofp} alt='horn animal' title={this.props.name} ></img>
-            //     <p>{this.props.description}</p>
-            //     <p>❤ {this.state.numberOfpets}</p>
-
-            // </div>
+            
         )
 
 
