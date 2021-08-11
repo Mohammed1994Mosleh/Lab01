@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
+import Modle from './Modle';
 
 
 class HornedBeasts extends React.Component {
@@ -10,7 +11,9 @@ class HornedBeasts extends React.Component {
 
         super(props)
         this.state = {
-            numberOfpets: 0
+            numberOfpets: 0,
+            show1:false
+            
         }
     }
 
@@ -22,11 +25,33 @@ class HornedBeasts extends React.Component {
          
         )
     }
+    
+    displaymodule = () => {
+        this.setState(
+        {
+           show1:true
+        }
+         
+        )
+        console.log(this.state.show1);
+    }
+
+    removemodle = () =>{
+        this.setState(
+            {
+               show1:false
+            }
+        )
+
+    }
 
     render() {
         return (
+
+          <div> 
+            <Modle show1={this.state.show1} title={this.props.name} src={this.props.imageUrl} function={this.removemodle} description={this.props.description} />
             <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={this.props.imageUrl} />
+            <Card.Img onClick={this.displaymodule} variant="top" src={this.props.imageUrl} />
             <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Text>
@@ -36,7 +61,7 @@ class HornedBeasts extends React.Component {
           <Button onClick={this.incrNofp} variant="primary">Votee</Button>
             </Card.Body>
           </Card>
-
+     </div> 
             
         )
 
